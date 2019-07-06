@@ -112,89 +112,86 @@ Penjumlahan
 
           Matriks1 = Matrix (2,2)
           print (Matriks1)
+Matriks[0,0]=10
+Matriks[0,1]=1
+Matriks[1,0]=20
 
-          Matriks[0,0]=10
-          Matriks[0,1]=1
-          Matriks[1,0]=20
-
-          Matriks[1,1]=2
+Matriks[1,1]=2
 
           Matriks1 = Matrix (2,2)
           print (Matriks1)
-
-          Matriks[0,0]=10
-          Matriks[0,1]=1
-          Matriks[1,0]=20
-          Matriks[1,1]=2
-          | 10 1 |
-          | 20 2 |
+Matriks[0,0]=10
+Matriks[0,1]=1
+Matriks[1,0]=20
+Matriks[1,1]=2
+          
+| 10 1 |
+| 20 2 |
 
           Matriks3 = Matrix (2,3)
           print (Matriks2)
-
-          Matriks[0,0]=4
-          Matriks[0,1]=6
-          Matriks[1,0]=7
-          Matriks[1,1]=8
-          | 4 6 |
-          | 7 8 |
+Matriks[0,0]=4
+Matriks[0,1]=6
+Matriks[1,0]=7
+Matriks[1,1]=8
+| 4 6 |
+| 7 8 |
 
           Matriks2 = Matrix (2,2)
           print (Matriks2)
-
-          Matriks[0,0]=1
-          Matriks[0,1]=2
-          Matriks[0,2]=10
-          Matriks[1,0]=4
-          Matriks[1,2]=7
-          Matriks[1,2]=8
-          | 1 2 10 |
-          | 4 7  8 |
+Matriks[0,0]=1
+Matriks[0,1]=2
+Matriks[0,2]=10
+Matriks[1,0]=4
+Matriks[1,2]=7
+Matriks[1,2]=8
+| 1 2 10 |
+| 4 7  8 |
 
           Jumlah=Matriks1+Matriks2
           print(Jumlah)
-          | 12  7 |
-          | 27 10 |
+| 12  7 |
+| 27 10 |
 
           Jumlah=Matriks1+Matriks3
-          ukuran Matriks tidak sama
+ukuran Matriks tidak sama
 
 
 Perkalian
 
           Matriks1 = Matrix (2,2)
           print (Matriks1)
-          Matriks[0,0]=1
-          Matriks[0,1]=2
-          Matriks[1,0]=3
-          Matriks[1,0]=4
-          | 1 2 |
-          | 3 4 |
+Matriks[0,0]=1
+Matriks[0,1]=2
+Matriks[1,0]=3
+Matriks[1,0]=4
+| 1 2 |
+| 3 4 |
 
           Matriks2 = Matrix (1,2)
           print (Matriks2)
-          | 1 2 |
+| 1 2 |
 
           Hasil = Matrix&Matriks2
-          Ukuran MAtriks tidak sesuai
+Ukuran MAtriks tidak sesuai
 
           Matriks3 = Matrix (2,3)
-          Matriks[0,0]=1
-          Matriks[0,1]=2
-          Matriks[1,2]=3
-          Matriks[1,0]=4
-          Matriks[1,1]=5
-          Matriks[1,2]=6
+Matriks[0,0]=1
+Matriks[0,1]=2
+Matriks[1,2]=3
+Matriks[1,0]=4
+Matriks[1,1]=5
+Matriks[1,2]=6
 
           print(Matriks1)
           print(Matriks3)
           Hasil = Matriks1*Matriks3
           print (Hasil)
-          | 1 2 |
-          | 3 4 |
+| 1 2 |
+| 3 4 |
 
-          | 1 2 3 |
-          | 4 5 6 |
+| 1 2 3 |
+| 4 5 6 |
           
 
 2. Buatlah class LinkedList, dengan beberapa method tambahan pada class LinkedList seperti
@@ -213,28 +210,21 @@ Berikut contoh penggunaan class LinkedList
           mylist1.addReart(84)
           mylist1.addReart(12)
           mylist1.addReart(77)
-
-          [5,84,12,77]
-
+[5,84,12,77]
 
           mylist2=LingkedList()
           mylist2.addReart(8)
           mylist2.addReart(9)
           print (mylist2)
-
-          [ 8, 9 ]
-
+[ 8, 9 ]
 
           print('mylist1=, mylist1')
           print('mylist2=, mylist2')
           addList=mylist1+mylist2
           print('hasil penjumlahan=', addList)
-
-          mylist1= [5,84,12,77]
-          mylist2= [8,9]
-          Hasil Penjumlahan= [13,93,12,77]
-
-
+mylist1= [5,84,12,77]
+mylist2= [8,9]
+Hasil Penjumlahan= [13,93,12,77]
 
           mylist3=LingkedList()
           mylist3.addRear(10)
@@ -242,12 +232,10 @@ Berikut contoh penggunaan class LinkedList
           addList2=mylist2+mylist3
           print('mylist2=', mylist2)
           print('mylist3=', mylist3)
-          print('Hasil Penjumlahan', addList2)
-
-          mylist2=[8,9]
-          myliss3=[10,11]
-          Hasil Penjumlahan= [18,20]
-
+          print('Hasil Penjumlahan', addList2) 
+mylist2=[8,9]
+myliss3=[10,11]
+Hasil Penjumlahan= [18,20]
 
           mylist4=LingkedList()
           mylist4=addRear(1)
@@ -260,7 +248,5 @@ Berikut contoh penggunaan class LinkedList
           print('mylist3=', mylist3)
           print('mylist4=', mylist4)
           print(Hasil Penjumlahan=', addList3')
-
-          mylist3= [10,11]
-          mylist4= [1,2,3,4,5,6]
-          Hasil Penjumlahan= [11,13,3,4,5,6]
+mylist3= [10,11]
+Hasil Penjumlahan= [11,13,3,4,5,6]
