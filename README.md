@@ -1,4 +1,5 @@
 # Rangkuman-Modul3
+# Class dan Linked List
 
 String dan List
 Suatu variabel yang berbentuk lists ataupun string, memiliki dua buah elemen yang terkandung di dalam variabel tersebut, yaitu nilai atau yang disebut dengan state/property, serta method atau fungsi, yang dapat digunakan untuk mengolah nilai pada variabel tersebut.
