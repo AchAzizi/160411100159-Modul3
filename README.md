@@ -90,8 +90,26 @@ Berikut algoritma Insertion Sort :
          maka lakukan pergeseran posisi data.
       b. lakukan terus perbandingan data key ini dengan data pada indeks sebelumnya, sampai data key tidak lebih kecil lagi
          atau sampai dengan data pada posisi pertama.
+
+kode
+
+      def insertionSort(listData):
+          for outIter in range(1,len(listData)):
+              print(listData)
+              key=listData[outIter]
+              ind=outIter
+              while (ind>0 and listData[ind-1]>key):
+                  listData[ind]=listData[ind-1]
+                  ind=ind-1
+                  print('inner=',listData)
+              listData[ind]=key
+
+          print('sortedData=',listData)    
+          
+    b=[10,2,5,8,1,20,2,2,4]
+    insertionSort(b)
   
-  
+
 
 Soal Praktikum
 1. Buatlah class Matrix dengan beberapa method seperti berikut :
