@@ -106,6 +106,7 @@ Soal Praktikum
        pada matriks kedua, maka akan mengeluarkan warning bahwa ukuran matriks tidak sesuai.
        
        
+       
 Berikut adalah contoh penggunaan class Matrix
 
 Penjumlahan
@@ -157,6 +158,8 @@ Matriks[1,2]=8
 ukuran Matriks tidak sama
 
 
+
+
 Perkalian
 
           Matriks1 = Matrix (2,2)
@@ -192,6 +195,8 @@ Matriks[1,2]=6
 
 | 1 2 3 |
 | 4 5 6 |
+          
+          
           
 
 2. Buatlah class LinkedList, dengan beberapa method tambahan pada class LinkedList seperti
@@ -250,3 +255,160 @@ Hasil Penjumlahan= [18,20]
           print(Hasil Penjumlahan=', addList3')
 mylist3= [10,11]
 Hasil Penjumlahan= [11,13,3,4,5,6]
+
+
+Jawaban Praktikum
+
+1. Class Matriks
+
+          class Point():
+              def __init__(self,x,y,dim):
+                  self.x = x
+                  self.y = y
+                  self.dim = dim
+
+          class matrix(object):
+              def __init__(self,mat):
+                  self.mat = mat
+                  self.row = len(mat)
+                  self.col = len(mat[0])
+                  self._matRes = []
+                  self.__s = ''
+
+              def __str__(self):
+                  for i in range(self.row):
+                    self.__s += '\n'
+                    for j in range(self.col):
+                      self.__s += '%g\t' %(self.mat[i][j])
+                  return self.__s
+
+
+              def __mul__(self,other):
+                  if isinstance(other,int) or isinstance(other,float):
+                      for i in range(self.row):
+                          for j in range(self.col):
+                              self.mat[i][j] *= other
+                      return matrix(self.mat)
+
+                  if self.col != other.row: return 'The number of columns of the first matrix must be equal to the number of rows of the second.'
+                  self._matRes = [[0 for r in range(other.col)] for c in range(self.row)]
+                  for i in range(self.row):
+                      for j in range(other.col):
+                          for k in range(other.row):
+                              self._matRes[i][j] += self.mat[i][k] * other.mat[k][j]               
+                  return matrix(self._matRes)
+
+              def __add__(self,other):
+                  if not (self.row == other.row) and (self.col == other.col): return 'The number of col is not equal to the number of row'
+                  self._matRes = [[0 for r in range(self.col)] for c in range(self.row)]
+                  for i in range(self.row):
+                      for j in range(self.col):
+                          self._matRes[i][j] += self.mat[i][j] + other.mat[i][j]
+                  return matrix(self._matRes)
+
+              def __pow__(self,other):
+                if not isinstance(other,int): return 'only int'
+                if other == 0: return 'Prime matrix'
+                if other < 0: return 'only int'
+                for i in range(1,other+1):
+                  if i != other:
+                    self.__s += 'matrix(self.mat)*'
+                  else:
+                    self.__s += 'matrix(self.mat)'
+                return eval(self.__s)
+
+              def det(self, point):
+                M = point.dim - 1
+                if len(self.mat) == 2 :
+                      return (int(self.mat[0][0]) * int(self.mat[1][1])) - (int(self.mat[0][1]) * int(self.mat[1][0]))
+                s = 0
+                for row in range(1, point.dim+1):
+                      copyli = []
+                      for i in range(1,len(li)):
+                          copyli1 = []
+                  for j in range(len(li)):
+                      if (row - 1) != j :
+                          copyli1.append(li[i][j])
+                          copyli.append(copyli1)
+                    s += (-1) ** (1 + row) * int(li[0][row-1]) * det(copyli, Point(1, row, M))
+                return s
+          def inverse(self):
+            pass
+          print matrix.det(matrix([[1,2],[2,3]]))
+          print (matrix([[15,24,33],[21,-34,25]]) * matrix([[15,24],[21,-34],[1,3]]))* matrix([[1,2],[2,3]])
+          print (matrix([[1,2,12,33,2,2],[1,2,3,22,1,3],[1,21,3,4,2,4],[111,31,34,2,12,1],[2,33,122,1,3,3],[1,19,90,6,2,4]]))**10
+          print ( matrix([[1,2],[2,3]]) * matrix([[1,2],[2,3]])) + matrix([[1,2],[2,3]])
+
+
+
+
+2. Class LingkedList
+
+          class Node:
+              def __init__(self,data):
+                  self.data = data
+                  self.next = None
+
+
+          class LinkedList:
+              def __init__(self):
+                  self.head = None
+              def push(self,new_data):
+                  new_node= Node(new_data)
+                  new_node.next = self.head
+                  self.head = new_node
+              def sum2Lists(self,list1,list2):
+                  prev=None
+                  temp=None
+                  carry = 0
+                  while (list1 is not None or list2 is not None):
+                      if list1 is None:
+                          fdata=0
+                      else:
+                          fdata=list1.data
+                      if list2 is None:
+                          sdata=0
+                      else:
+                          sdata=list2.data
+                      Sum = carry + fdata + sdata
+                      temp = Node(Sum)
+                      if self.head is None:
+                          self.head = temp
+                      else:
+                          prev.next = temp
+                      prev = temp
+                      if list1 is not None:
+                          list1 = list1.next
+                      if list2 is not None:
+                          list2= list2.next
+                  if carry > 0:
+                      temp.next = Node(carry)
+              def printList(self):
+                  temp=self.head
+                  x=[]
+                  while(temp):
+                      x.append(temp.data)
+                      temp=temp.next
+                  print(x)
+
+          list1=LinkedList()
+          list2=LinkedList()
+
+          n=int(input('Banyak data untuk list 1 : '))
+          for i in range (n):
+              x = int(input('Data : '))
+              list1.push(x)
+              i=i+1
+          m=int(input('Banyak data untuk list 2 : '))
+          for j in range (m):
+              y=int(input('Data : '))
+              list2.push(y)
+              j=j+1
+          truck= LinkedList()
+          truck.sum2Lists(list1.head, list2.head)
+          print("First List is ")
+          list1.printList()
+          print("Second List is ")
+          list2.printList()
+          print("Result List is ")
+          truck.printList()
